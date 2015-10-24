@@ -1,1 +1,6 @@
 c:\users\simo\documents\visual studio 2015\Projects\First application problem\Points\bin\Debug\Points.exe.config
+c:\users\simo\documents\visual studio 2015\Projects\First application problem\Points\bin\Debug\Points.exe
+c:\users\simo\documents\visual studio 2015\Projects\First application problem\Points\bin\Debug\Points.pdb
+c:\users\simo\documents\visual studio 2015\Projects\First application problem\Points\obj\Debug\Points.exe
+c:\users\simo\documents\visual studio 2015\Projects\First application problem\Points\obj\Debug\Points.pdb
+c:\users\simo\documents\visual studio 2015\Projects\First application problem\Points\obj\Debug\Points.csprojResolveAssemblyReference.cache
