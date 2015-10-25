@@ -1,1 +1,6 @@
 c:\users\simo\documents\visual studio 2015\Projects\Second application problem\Word Game\bin\Debug\Word Game.exe.config
+c:\users\simo\documents\visual studio 2015\Projects\Second application problem\Word Game\bin\Debug\Word Game.exe
+c:\users\simo\documents\visual studio 2015\Projects\Second application problem\Word Game\bin\Debug\Word Game.pdb
+c:\users\simo\documents\visual studio 2015\Projects\Second application problem\Word Game\obj\Debug\Word Game.csprojResolveAssemblyReference.cache
+c:\users\simo\documents\visual studio 2015\Projects\Second application problem\Word Game\obj\Debug\Word Game.exe
+c:\users\simo\documents\visual studio 2015\Projects\Second application problem\Word Game\obj\Debug\Word Game.pdb

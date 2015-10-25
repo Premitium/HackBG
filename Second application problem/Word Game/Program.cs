@@ -8,8 +8,11 @@ namespace Word_Game
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
+            Reader ReaderFunc = new Reader();
+            ReaderFunc.ReadFile();
         }
     }
 }
