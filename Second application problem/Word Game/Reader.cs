@@ -9,12 +9,9 @@ namespace Word_Game
 {
     class Reader
     {
-        int[][] results = new int[10][];
-        public int[][] ReadCharsFromFile()
+        char[,] results = new char[5, 6];
+        public char[,] ReadCharsFromFile()
         {
-            int rowCount = 0;
-            int colCount = 0;
-            char c;
             try
             {
                 // Create an instance of StreamReader to read from a file.
@@ -26,14 +23,14 @@ namespace Word_Game
                     // the file is reached.
                     while ((line = sr.ReadLine()) != null)
                     {
-                        if (line == null)
-                        {
-                            break;
-                        }
                         //Add characters to 2D array
-                        int rowCount = results["row_count"];
-                        int columnCount = counts["column_count"];
-
+                        for (int y = 0; y < 6; y++)//y rows
+                        {
+                            for (int x = 0; x < 5; x++)//x columns
+                            {
+                                results[x, y] = line[x];
+                            }
+                        }
                     }
                 }
             }
