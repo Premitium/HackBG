@@ -9,7 +9,7 @@ namespace Word_Game
 {
     class Reader
     {
-        char[,] results = new char[5, 6];
+        char[,] results = new char[4, 5];
         public char[,] ReadCharsFromFile()
         {
             try
@@ -18,20 +18,25 @@ namespace Word_Game
                 // The using statement also closes the StreamReader.
                 using (StreamReader sr = new StreamReader("names.txt"))
                 {
-                    string line;
+                    string line = "";
                     // Read and display lines from the file until the end of 
                     // the file is reached.
-                    while ((line = sr.ReadLine()) != null)
+                    do
                     {
-                        //Add characters to 2D array
-                        for (int y = 0; y < 6; y++)//y rows
+
+                        for (int y = 0; y < 5; y++)//y rows
                         {
-                            for (int x = 0; x < 5; x++)//x columns
+                            line = sr.ReadLine();
+                            if (line == null)
+                            {
+                                break;
+                            }
+                            for (int x = 0; x < 4; x++)//x columns
                             {
                                 results[x, y] = line[x];
                             }
                         }
-                    }
+                    } while (line != null);
                 }
             }
             catch (Exception e)
@@ -41,6 +46,10 @@ namespace Word_Game
                 Console.WriteLine(e.Message);
             }
             return results;
+        }
+        public string PrintArray()
+        {
+            return "e";
         }
     }
 }
