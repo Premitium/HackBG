@@ -9,9 +9,12 @@ namespace Word_Game
 {
     class Reader
     {
-        Dictionary<char, char> dictionary = new Dictionary<char, char>();
-        public void ReadFile()
+        int[][] results = new int[10][];
+        public int[][] ReadCharsFromFile()
         {
+            int rowCount = 0;
+            int colCount = 0;
+            char c;
             try
             {
                 // Create an instance of StreamReader to read from a file.
@@ -28,11 +31,9 @@ namespace Word_Game
                             break;
                         }
                         //Add characters to 2D array
-                        int rowCount = counts["row_count"];
+                        int rowCount = results["row_count"];
                         int columnCount = counts["column_count"];
 
-
-                        Console.WriteLine(line);
                     }
                 }
             }
@@ -42,6 +43,7 @@ namespace Word_Game
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
             }
+            return results;
         }
     }
 }
