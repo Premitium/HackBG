@@ -11,9 +11,11 @@ namespace Word_Game
 
         static void Main(string[] args)
         {
-            Reader ReaderFunc = new Reader();
+            int counter = 0;
+            Reader ReaderFunc = new Reader(counter);
 
             char[,] twoDResult = ReaderFunc.ReadCharsFromFile();
+            ReaderFunc.SearchWord("ivan");
             Console.Write(twoDResult[0, 0]);
             Console.Write(twoDResult[1, 0]);
             Console.Write(twoDResult[2, 0]);

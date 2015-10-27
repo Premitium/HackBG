@@ -9,6 +9,13 @@ namespace Word_Game
 {
     class Reader
     {
+        static int[,] startingPosition = new int[1, 1];
+        public int counter = 0;
+        public Reader(int counter)
+        {
+            this.counter = counter;
+        }
+
         char[,] results = new char[4, 5];
         public char[,] ReadCharsFromFile()
         {
@@ -47,10 +54,39 @@ namespace Word_Game
             }
             return results;
         }
-        public string PrintArray()
+        public void SearchWord(string name, int i, int a, int width,
+                                int height, string build, int direction)
         {
-            return "e";
+            char firstLetter;
+            //look out for the "walls"
+            if (i >= 4 || i < 0 || a >= 5 || a < 0)
+            {
+                return;
+            }
+            //if you find the first letter look in all possible directions, one step
+            //now pick the first letter from the string
+            for (int z = 0; z < name.Length; z++)
+            {
+                firstLetter = name[z];
+                //go look for it in the 2d array
+                for (int y = 0; y < 5; y++)
+                {
+                    for (int x = 0; x < 4; x++)
+                    {
+                        if (results[x, y] == firstLetter)
+                        {
+                            startingPosition[x, y] = results[x, y];
+                        }
+                    }
+                }
+
+                //if you found the second letter, look only one step at a time in the same direction
+
+                //if found start searching in all possible directionsif (i >= width ||
+
+            }
         }
     }
 }
+
 
