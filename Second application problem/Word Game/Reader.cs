@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace Word_Game
 {
-    class Reader
+    public class Reader
     {
-        static int[,] startingPosition = new int[1, 1];
+        public int[,] startingPosition = new int[1, 1];
         public int counter = 0;
         public Reader(int counter)
         {
             this.counter = counter;
         }
 
-        char[,] results = new char[4, 5];
-        public char[,] ReadCharsFromFile()
+        public static char[,] results = new char[4, 5];
+        public static char[,] ReadCharsFromFile()
         {
             try
             {
@@ -54,37 +54,42 @@ namespace Word_Game
             }
             return results;
         }
-        public void SearchWord(string name, int i, int a, int width,
-                                int height, string build, int direction)
+        public void SearchWord(char[,] input, string name)
         {
-            char firstLetter;
-            //look out for the "walls"
-            if (i >= 4 || i < 0 || a >= 5 || a < 0)
+            //1. loop through the array and look for the first letter of the string
+            //2. if found search in all directions "iterative"
+            //3. if one direction doesn't find it break out of the mathod and continue to search
+            //4. if found mark the positions so you don't find the same word more than once
+            char firstLetter = name[0];
+
+            //go look for it in the 2d array
+            for (int y = 0; y < 5; y++)
             {
-                return;
-            }
-            //if you find the first letter look in all possible directions, one step
-            //now pick the first letter from the string
-            for (int z = 0; z < name.Length; z++)
-            {
-                firstLetter = name[z];
-                //go look for it in the 2d array
-                for (int y = 0; y < 5; y++)
+                for (int x = 0; x < 4; x++)
                 {
-                    for (int x = 0; x < 4; x++)
+                    if (results[x, y] == firstLetter)//found the letter
                     {
-                        if (results[x, y] == firstLetter)
-                        {
-                            startingPosition[x, y] = results[x, y];
-                        }
+                        Console.WriteLine("Found it " +" "+ firstLetter);
+                        SearchRightDirection(results, x, y);
                     }
                 }
-
-                //if you found the second letter, look only one step at a time in the same direction
-
-                //if found start searching in all possible directionsif (i >= width ||
-
             }
+            //if you found the second letter, look only one step at a time in the same direction
+
+            //if found start searching in all possible directionsif (i >= width ||
+        }
+
+        public bool SearchRightDirection(char [,] matrix, int x, int y)
+        {
+            
+            for (int columns = 0; columns < matrix.Length; columns++)
+            {
+                for (int rows = 0; rows < length; rows++)
+                {
+
+                }
+            }
+            return false;
         }
     }
 }
